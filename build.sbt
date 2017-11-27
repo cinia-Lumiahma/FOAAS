@@ -3,12 +3,12 @@ import java.io.File
 import com.typesafe.config.ConfigFactory
 
 name := "FOAAS"
- 
-version := "1.0"
 
 val initConfig = ConfigFactory.parseFile(new File("conf/application.conf")).resolve()
 
 lazy val `foaas` = (project in file(".")).enablePlugins(PlayScala)
+
+version := initConfig.getString("app.version")
 
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
 
