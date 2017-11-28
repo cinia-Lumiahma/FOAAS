@@ -1,8 +1,8 @@
 package models
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Format, JsValue, Json}
 
-case class JsonInfo(msg: String)
+case class JsonInfo(message: String, subtitle: Option[String] = None)
 
 case class JsonError(err: String)
 
